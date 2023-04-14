@@ -13,9 +13,9 @@ using static Umbraco.Cms.Core.Constants;
 
 namespace DemoWebsite.v9
 {
-    public class ExampleComposer : ComponentComposer<ExampleComponent> { }
+    public class HomeComposer : ComponentComposer<ExampleComponent> { }
 
-    public class ExampleComponent : IComponent
+    public class HomeComponent : IComponent
     {
         private readonly IContentBlockDefinitionRepository _definitions;
         private readonly PropertyEditorCollection _propertyEditors;
@@ -27,7 +27,7 @@ namespace DemoWebsite.v9
         private readonly IConfigurationEditorJsonSerializer _configurationEditorJsonSerializer;
         private readonly IRuntimeState _runtimeState;
 
-        public ExampleComponent(
+        public HomeComponent(
             IContentBlockDefinitionRepository definitions,
             PropertyEditorCollection propertyEditors,
             IDataTypeService dataTypeService,
@@ -70,13 +70,13 @@ namespace DemoWebsite.v9
             // Block
             var block = new ContentBlockDefinition
             {
-                Name = "Example Block",
+                Name = "Hero Block",
                 Id = new Guid("11111111-1111-1111-1111-111111111111"),
                 DataTypeKey = dataTypeKey,
                 // PreviewImage will usually be a path to some image,
                 // for this demo we use a base64-encoded PNG of 3x2 pixels
                 PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYzzDwPCfAQqYGJAAACokAc/b6i7NAAAAAElFTkSuQmCC",
-                Description = "Example Block",
+                Description = "Hero Block",
 
                 Layouts = new IContentBlockLayout[]
                     {
@@ -116,11 +116,11 @@ namespace DemoWebsite.v9
             // Header
             var header = new ContentBlockDefinition
             {
-                Name = "Example Header",
+                Name = "Hero Header",
                 Id = new Guid("55555555-5555-5555-5555-555555555555"),
                 DataTypeKey = dataTypeKey,
                 PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZY/zz0v8/AxQwMSABAEvFAzckGfK1AAAAAElFTkSuQmCC",
-                Description = "Example Block",
+                Description = "Hero Block",
 
                 Layouts = new IContentBlockLayout[]
                     {
@@ -242,7 +242,7 @@ namespace DemoWebsite.v9
                             PropertyEditorAlias = PropertyEditors.Aliases.MediaPicker,
                             Name = "Image",
                             Alias = "image",
-                        },
+                        }
                     }))
                     {
                         Alias = "content",
@@ -269,7 +269,7 @@ namespace DemoWebsite.v9
 
             var dataType = new DataType(nestedContentEditor, _configurationEditorJsonSerializer, -1)
             {
-                Name = "Perplex.ContentBlocks - ExampleBlock",
+                Name = "Perplex.ContentBlocks - HeroBlock",
                 Key = dataTypeKey,
                 Configuration = new NestedContentConfiguration
                 {
