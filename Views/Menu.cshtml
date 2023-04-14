@@ -1,6 +1,7 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Menu>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
 @{
 	Layout = null;
 }
@@ -66,8 +67,13 @@
 			</div>
 		</header>
 
-		<div class="container mx-auto px-4  text-gray-900">
-			<div class="mt-24 grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-12">
+		<div class="container mx-auto px-4  text-gray-900"> 
+			@{
+			var columnsDesktop = Model.Value<string>("ColumnsDesktop"); 
+			var columnsTablet = Model.Value<string>("ColumnsTablet"); 
+						@:<div class="mt-24 grid grid-cols-1 md:grid-cols-@(!string.IsNullOrEmpty(columnsTablet) ? columnsTablet : "2") lg:grid-cols-@(!string.IsNullOrEmpty(columnsDesktop) ? columnsDesktop : "3") gap-x-12 gap-y-12">
+
+			}
 				@{
 					var items = Model.Value<IEnumerable<IPublishedElement>>("MainMenu");
 						if (items != null) {
@@ -76,32 +82,27 @@
 								@* var title = item.Value<string>("ContentTitle");
 								var description = item.Value<string>("ContentCopy"); *@
 								var image = item.Value<IPublishedContent>("Image");
+								var itemTitle = item.Value("ItemTitle");
+								var itemDescription = item.Value("ItemDescription");
 								@:<div class="mt-6">					
 									@:<div class="group relative">
 
 										if (image != null)
 											{
-												<div class="min-h-80 aspect-2/1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-4/3 group-hover:opacity-75 lg:h-80">
+												<div class="aspect-4/3 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75">
 													<img src="@image.Url()" alt="" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
 												</div>
 											}
+										if (itemTitle != null || itemDescription != null)
+											{
+												<div class="mt-4">
+													<h5>@itemTitle</h5>
+													@Html.Raw(itemDescription)
+												</div>
+											}
 
-										@* if (!string.IsNullOrEmpty(title) || !string.IsNullOrEmpty(description)) {
-											@:<div class="mt-4">
+										
 
-											if (!string.IsNullOrEmpty(title))
-												{
-													<h3>@title</h3>
-												}
-											if (!string.IsNullOrEmpty(description))
-												{
-													<div>
-														@Html.Raw(description)
-													</div>
-												}
-
-											@:</div>
-										} *@
 									@:</div>
 								@:</div>
 							}

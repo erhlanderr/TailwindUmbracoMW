@@ -50,6 +50,36 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// blocks
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("blocks")]
+		public virtual global::Perplex.ContentBlocks.Rendering.IContentBlocks Blocks => this.Value<global::Perplex.ContentBlocks.Rendering.IContentBlocks>(_publishedValueFallback, "blocks");
+
+		///<summary>
+		/// Columns Desktop
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]
+		[ImplementPropertyType("columnsDesktop")]
+		public virtual int ColumnsDesktop => this.Value<int>(_publishedValueFallback, "columnsDesktop");
+
+		///<summary>
+		/// Columns Tablet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]
+		[ImplementPropertyType("columnsTablet")]
+		public virtual int ColumnsTablet => this.Value<int>(_publishedValueFallback, "columnsTablet");
+
+		///<summary>
+		/// Config
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("config")]
+		public virtual object Config => this.Value(_publishedValueFallback, "config");
+
+		///<summary>
 		/// Header
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]
