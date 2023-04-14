@@ -1,0 +1,113 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Menu>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = null;
+}
+<html>
+	<head>
+		<link rel="stylesheet" href="/css/styles.css"/>
+	</head>
+	<body class="font-poppins">
+		<header>
+				<!-- Hero section with background image, heading, subheading and button -->
+				<div
+					class="relative overflow-hidden bg-no-repeat bg-cover bg-center"
+					style="
+					background-position: 50%;
+					background-image: url('https://tecdn.b-cdn.net/img/new/slides/146.webp');
+					height: 550px;
+					">
+					<div
+						class="h-full w-full overflow-hidden bg-fixed"
+						style="background-color: rgba(0, 0, 0, 0.75)">
+
+						<div class="container mx-auto px-4 text-gray-900">
+							<div class="grid h-full grid-cols-1 gap-x-6 gap-y-10">
+								<div class="flex h-full items-center justify-center">
+									<div class="px-6 text-center text-white md:px-12">
+										
+										@{
+											var header = Model.Value<string>("Header");
+										
+											if (!string.IsNullOrEmpty(header))
+												{
+													<h1 class="mb-6 text-5xl font-bold">@header</h1>
+												}
+
+											var subHeader = Model.Value<string>("SubHeader");
+										
+											if (!string.IsNullOrEmpty(subHeader))
+												{
+													<h3 class="mb-8 text-3xl font-bold">@subHeader</h3>
+												}
+											
+										
+											var buttonContent = Model.Value<string>("Button");
+											IPublishedContent buttonLink = Model.Value<IPublishedContent>("ButtonLink");										
+											if (!string.IsNullOrEmpty(buttonContent) && buttonLink != null)
+												{
+													<a
+														href="/@buttonLink.Name.ToLower()"
+														type="button"
+														class="button"
+														data-te-ripple-init
+														data-te-ripple-color="light">
+														@buttonContent
+													</a>
+											}
+											
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container mx-auto px-4  text-gray-900">
+			<div class="mt-24 grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-12">
+				@{
+					var items = Model.Value<IEnumerable<IPublishedElement>>("MainMenu");
+						if (items != null) {
+							foreach (var item in items)
+							{
+								@* var title = item.Value<string>("ContentTitle");
+								var description = item.Value<string>("ContentCopy"); *@
+								var image = item.Value<IPublishedContent>("Image");
+								@:<div class="mt-6">					
+									@:<div class="group relative">
+
+										if (image != null)
+											{
+												<div class="min-h-80 aspect-2/1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-4/3 group-hover:opacity-75 lg:h-80">
+													<img src="@image.Url()" alt="" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+												</div>
+											}
+
+										@* if (!string.IsNullOrEmpty(title) || !string.IsNullOrEmpty(description)) {
+											@:<div class="mt-4">
+
+											if (!string.IsNullOrEmpty(title))
+												{
+													<h3>@title</h3>
+												}
+											if (!string.IsNullOrEmpty(description))
+												{
+													<div>
+														@Html.Raw(description)
+													</div>
+												}
+
+											@:</div>
+										} *@
+									@:</div>
+								@:</div>
+							}
+						}
+				}
+			</div>
+		</div>
+	</body>
+</html>

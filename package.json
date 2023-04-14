@@ -1,0 +1,16 @@
+{
+  "name": "tailwindumbracomw",
+  "version": "1.0.0",
+  "description": "Tailwind Umbraco Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-css": "tailwindcss -i tailwind/styles.css -o wwwroot/css/styles.css --watch"
+  },
+  "author": "Luke",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "tailwindcss": "^3.3.1"
+  }
+}
