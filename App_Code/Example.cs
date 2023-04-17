@@ -60,7 +60,7 @@ namespace ExampleSite
                             Name = "Red",
                             Description = "",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYzzDwPCfAQqYGJAAACokAc/b6i7NAAAAAElFTkSuQmCC",
-                            ViewPath = "~/ExampleComponent/Views/Partials/ExampleBlock/Red.cshtml"
+                            ViewPath = "~/Views/Partials/ExampleBlock/Red.cshtml"
                         },
                         new ContentBlockLayout
                         {
@@ -68,7 +68,7 @@ namespace ExampleSite
                             Name = "Green",
                             Description = "",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYyy+JPafAQqYGJAAADcdAl5UlCmyAAAAAElFTkSuQmCC",
-                            ViewPath = "~/ExampleComponent/Views/Partials/ExampleBlock/Green.cshtml"
+                            ViewPath = "~/Views/Partials/ExampleBlock/Green.cshtml"
                         },
                         new ContentBlockLayout
                         {
@@ -76,7 +76,7 @@ namespace ExampleSite
                             Name = "Blue",
                             Description = "",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYzRJXfKfAQqYGJAAADOAAkAWXApqAAAAAElFTkSuQmCC",
-                            ViewPath = "~/ExampleComponent/Views/Partials/ExampleBlock/Blue.cshtml",
+                            ViewPath = "~/Views/Partials/ExampleBlock/Blue.cshtml",
                         },
                     },
 
@@ -103,7 +103,7 @@ namespace ExampleSite
                             Name = "Yellow",
                             Description = "",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZY/zz0v8/AxQwMSABAEvFAzckGfK1AAAAAElFTkSuQmCC",
-                            ViewPath = "~/ExampleComponent/Views/Partials/ExampleHeader/Yellow.cshtml"
+                            ViewPath = "~/Views/Partials/ExampleHeader/Yellow.cshtml"
                         },
                         new ContentBlockLayout
                         {
@@ -111,7 +111,7 @@ namespace ExampleSite
                             Name = "Magenta",
                             Description = "",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZY/zP8P8/AxQwMSABAEYIAwEl5g6iAAAAAElFTkSuQmCC",
-                            ViewPath = "~/ExampleComponent/Views/Partials/ExampleHeader/Magenta.cshtml"
+                            ViewPath = "~/Views/Partials/ExampleHeader/Magenta.cshtml"
                         },
                     },
 

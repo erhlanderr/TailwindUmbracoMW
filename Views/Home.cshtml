@@ -1,20 +1,10 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
+@inject IContentBlockRenderer Renderer
 
-@{
-	Layout = null;
-}
+@await Renderer.Render(Model.PerplexBlocks, Html.PartialAsync)\
 
-<html>
-	<head>
-		<link rel="stylesheet" href="/css/styles.css"/>
-	</head>
-	<body class="font-poppins">
-		
-	
-		<header>
-			<!-- Hero section with background image, heading, subheading and button -->
+@* @await Html.RenderContentBlocks(IContentBlockRenderer, Renderer); *@
+		@* <header>
 			<div
 				class="relative overflow-hidden bg-no-repeat bg-cover bg-center"
 				style="
@@ -137,14 +127,11 @@
 					<div>
 						<h1 class="mb-6 text-5xl font-bold">@imageColumnTitle</h1>
 						@Html.Raw(imageColumnContent)
-						@* if (!string.IsNullOrEmpty(imageColumnContent))
-							{
-							} *@
 					</div>
 				}
 		}
 		</div>
-	</div>
+	</div> *@
 
 
 
@@ -168,6 +155,3 @@
 		</article> *@
 
 		<div class="pt-24"></div>
-
-	</body>
-</html>

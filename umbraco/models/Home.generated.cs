@@ -106,6 +106,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ImageColumnTitle => this.Value<string>(_publishedValueFallback, "imageColumnTitle");
 
 		///<summary>
+		/// perplexBlocks
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("perplexBlocks")]
+		public virtual global::Perplex.ContentBlocks.Rendering.IContentBlocks PerplexBlocks => this.Value<global::Perplex.ContentBlocks.Rendering.IContentBlocks>(_publishedValueFallback, "perplexBlocks");
+
+		///<summary>
 		/// SubHeader
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.0.0+e3f4b86")]

@@ -13,9 +13,9 @@ using static Umbraco.Cms.Core.Constants;
 
 namespace DemoWebsite.v9
 {
-    public class ExampleComposer : ComponentComposer<ExampleComponent> { }
+    public class PrezzoComposer : ComponentComposer<PrezzoComponent> { }
 
-    public class ExampleComponent : IComponent
+    public class PrezzoComponent : IComponent
     {
         private readonly IContentBlockDefinitionRepository _definitions;
         private readonly PropertyEditorCollection _propertyEditors;
@@ -27,7 +27,7 @@ namespace DemoWebsite.v9
         private readonly IConfigurationEditorJsonSerializer _configurationEditorJsonSerializer;
         private readonly IRuntimeState _runtimeState;
 
-        public ExampleComponent(
+        public PrezzoComponent(
             IContentBlockDefinitionRepository definitions,
             PropertyEditorCollection propertyEditors,
             IDataTypeService dataTypeService,
