@@ -17,9 +17,8 @@
 <ul>
 	@foreach (var item in selection)
 	{
-	    var restaurantLink = "/restaurants" + item.Url();
 		<li>
-			<a href="@restaurantLink">@item.Name()</a>
+			<a href="@item.Url()">@item.Name()</a>
 		</li>
 	}
 </ul>
