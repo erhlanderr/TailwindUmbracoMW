@@ -1,0 +1,24 @@
+﻿@inherits UmbracoViewPage<IContentBlockViewModel<ExampleBlock>>
+
+@{
+
+    var imageColumn = Model.Content.Image.MediaUrl();
+    if (imageColumn != null)
+    {
+        <div>
+            <div class="min-h-100 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-square group-hover:opacity-75 lg:h-100">
+                <img src="@imageColumn" alt="" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+            </div>
+        </div>
+    }
+
+    var contentText = Model.Content.Text.ToString();
+    if (!string.IsNullOrEmpty(Model.Content.Title) || !string.IsNullOrEmpty(contentText))
+        {
+            <div>
+                <h1 class="mb-6 text-5xl font-bold">@Model.Content.Title</h1>
+                @Html.Raw(Model.Content.Text)
+            </div>
+        }
+}
+

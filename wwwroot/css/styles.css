@@ -743,10 +743,6 @@ li::before{
   aspect-ratio: 2 / 1;
 }
 
-.aspect-3\/1{
-  aspect-ratio: 3 / 1;
-}
-
 .aspect-4\/3{
   aspect-ratio: 4 / 3;
 }
@@ -1044,10 +1040,6 @@ body {
 @media (min-width: 1024px){
   .lg\:aspect-4\/3{
     aspect-ratio: 4 / 3;
-  }
-
-  .lg\:aspect-3\/1{
-    aspect-ratio: 3 / 1;
   }
 
   .lg\:h-80{

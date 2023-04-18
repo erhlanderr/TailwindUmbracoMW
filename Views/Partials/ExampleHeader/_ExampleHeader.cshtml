@@ -1,6 +1,33 @@
 @inherits UmbracoViewPage<IContentBlockViewModel<ExampleBlock>>
 
-<div style="height: 200px;">
-    <h2>@Model.Content.Title</h2>
-    @Model.Content.Text
+<div class="container mx-auto px-4 text-gray-900 h-full">
+    <div class="grid h-full grid-cols-1 gap-x-6 gap-y-10">
+        <div class="flex h-full items-center justify-center">
+            <div class="px-6 text-center text-white md:px-12">
+                @{
+                    if (!string.IsNullOrEmpty(Model.Content.Title))
+                        {
+                        <h1 class="mb-6 text-5xl font-bold">@Model.Content.Title</h1>
+                    }
+                    var contentText = Model.Content.Text.ToString();
+                    if (!string.IsNullOrEmpty(contentText))
+                        {
+                            <h3 class="mb-8 text-3xl font-bold">@Model.Content.Text</h3>
+                        }
+                    IPublishedContent buttonLink = Model.Content.Value<IPublishedContent>("ButtonLink");
+                    if (!string.IsNullOrEmpty(Model.Content.ButtonText) && buttonLink != null) 
+                        {
+                        <a
+                        href="/@buttonLink.Name.ToLower()"
+                        type="button"
+                        class="button"
+                        data-te-ripple-init
+                        data-te-ripple-color="light">
+                            @Model.Content.ButtonText
+                        </a>
+                    } 
+                }
+        </div>
+    </div>
 </div>
+       

@@ -1,4 +1,8 @@
 @inherits UmbracoViewPage
+@using UmbNav.Core.Extensions
+@using UmbNav.Core.Models
+
+@using Umbraco.Cms.Web;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,17 @@
     <link rel="stylesheet" href="/css/styles.css"/>
 </head>
 
+    
 <body class="font-poppins">
+    <!-- Navigation -->
+    @* @{
+    var site = Model.Root();
+    var umbNav = site.FirstChildOfType("siteSettings").Value<IEnumerable<UmbNavItem>>("umbNavPE");
+}
+@foreach (var item in umbNav)
+{
+    <a class="nav-link @item.CustomClasses" href="@item.Url()" target="@item.Target" rel="@item.Noopener @item.Noreferrer">@item.Title</a>
+} *@
     @RenderBody()
 </body>
 </html>

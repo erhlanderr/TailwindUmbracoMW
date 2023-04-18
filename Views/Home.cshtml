@@ -1,66 +1,7 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
 @inject IContentBlockRenderer Renderer
 
-@await Renderer.Render(Model.PerplexBlocks, Html.PartialAsync)\
-
-@* @await Html.RenderContentBlocks(IContentBlockRenderer, Renderer); *@
-		@* <header>
-			<div
-				class="relative overflow-hidden bg-no-repeat bg-cover bg-center"
-				style="
-				background-position: 50%;
-				background-image: url('https://tecdn.b-cdn.net/img/new/slides/146.webp');
-				height: 550px;
-				">
-				<div
-					class="h-full w-full overflow-hidden bg-fixed"
-					style="background-color: rgba(0, 0, 0, 0.75)">
-
-					<div class="container mx-auto px-4 text-gray-900">
-						<div class="grid h-full grid-cols-1 gap-x-6 gap-y-10">
-							<div class="flex h-full items-center justify-center">
-								<div class="px-6 text-center text-white md:px-12">
-									
-									@{
-										var header = Model.Value<string>("Header");
-									
-										if (!string.IsNullOrEmpty(header))
-											{
-												<h1 class="mb-6 text-5xl font-bold">@header</h1>
-											}
-
-										var subHeader = Model.Value<string>("SubHeader");
-									
-										if (!string.IsNullOrEmpty(subHeader))
-											{
-												<h3 class="mb-8 text-3xl font-bold">@subHeader</h3>
-											}
-										
-									
-										var buttonContent = Model.Value<string>("Button");
-										IPublishedContent buttonLink = Model.Value<IPublishedContent>("ButtonLink");										
-										if (!string.IsNullOrEmpty(buttonContent) && buttonLink != null)
-											{
-												<a
-													href="/@buttonLink.Name.ToLower()"
-													type="button"
-													class="button"
-													data-te-ripple-init
-													data-te-ripple-color="light">
-													@buttonContent
-												</a>
-										}
-										
-								}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
-	
+@await Renderer.Render(Model.PerplexBlocks, Html.PartialAsync)
 
 	<div class="container mx-auto px-4  text-gray-900">
 			<div class="mt-24 grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-12">
@@ -106,52 +47,5 @@
 			}
 		</div>
 	</div>
-
-	<div class="container mx-auto px-4  text-gray-900">
-		<div class="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12">
-		@{
-			var imageColumn = Model.Value<IPublishedContent>("ImageColumn");
-			if (imageColumn != null)
-			{
-				<div>
-				<div class="min-h-100 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-square group-hover:opacity-75 lg:h-100">
-					<img src="@imageColumn.Url()" alt="" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
-				</div>
-				</div>
-			}
-			var imageColumnTitle = Model.Value<string>("imageColumnTitle");
-			var imageColumnContent = Model.Value<string>("imageColumnContent");
-		
-			if (!string.IsNullOrEmpty(imageColumnTitle) || !string.IsNullOrEmpty(imageColumnContent))
-				{
-					<div>
-						<h1 class="mb-6 text-5xl font-bold">@imageColumnTitle</h1>
-						@Html.Raw(imageColumnContent)
-					</div>
-				}
-		}
-		</div>
-	</div> *@
-
-
-
-
-		@* <article class="format lg:format-lg format-red">
-			<h1>Prototyping from A to Z: best practices for successful prototypes</h1>
-			<p class="lead">Flowbite is an open-source library of UI components built with the utility-first classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals, datepickers.</p>
-			<p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way, you can think things through before committing to an actual design project.</p>
-			<p>But then I found a <a class="lead" href="#">component library based on Tailwind CSS called Flowbite</a>. It comes with the most commonly used UI components, such as buttons, navigation bars, cards, form elements, and more which are conveniently built with the utility classes from Tailwind CSS.</p>
-			
-			...
-
-			<h2>When does design come in handy?</h2>
-			<p>While it might seem like extra work at a first glance, here are some key moments in which prototyping will come in handy:</p>
-			<ol>
-				<li><strong>Usability testing</strong>. Does your user know how to exit out of screens? Can they follow your intended user journey and buy something from the site you’ve designed? By running a usability test, you’ll be able to see how users will interact with your design once it’s live;</li>
-				<li><strong>Involving stakeholders</strong>. Need to check if your GDPR consent boxes are displaying properly? Pass your prototype to your data protection team and they can test it for real;</li>
-				<li><strong>Impressing a client</strong>. Prototypes can help explain or even sell your idea by providing your client with a hands-on experience;</li>
-				<li><strong>Communicating your vision</strong>. By using an interactive medium to preview and test design elements, designers and developers can understand each other — and the project — better.</li>
-			</ol>
-		</article> *@
 
 		<div class="pt-24"></div>

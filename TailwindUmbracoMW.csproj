@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Our.Umbraco.UmbNav.Api" Version="2.0.2" />
+    <PackageReference Include="Our.Umbraco.UmbNav.Core" Version="2.0.1" />
+    <PackageReference Include="Our.Umbraco.UmbNav.Web" Version="2.0.6" />
     <PackageReference Include="Perplex.ContentBlocks" Version="2.1.9" />
     <PackageReference Include="Umbraco.Cms" Version="11.3.0" />
   </ItemGroup>
