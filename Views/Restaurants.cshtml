@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Restaurants>
+@inject IContentBlockRenderer Renderer
+
+@await Renderer.Render(Model.PerplexBlocks, Html.PartialAsync)
+<div>
+	Here is my search
+</div>
+
+
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("2e5989c9-0b55-4505-8463-24b15da1af23"))
+    .ChildrenOfType("restaurant")
+    .Where(x => x.IsVisible())
+    .OrderBy(x => x.Name);
+}
+<ul>
+	@foreach (var item in selection)
+	{
+	    var restaurantLink = "/restaurants" + item.Url();
+		<li>
+			<a href="@restaurantLink">@item.Name()</a>
+		</li>
+	}
+</ul>
+

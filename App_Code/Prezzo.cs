@@ -113,11 +113,11 @@ namespace PrezzoSite
                 }
             };
 
-            // Block
+            // Hero Image
             var heroImage = new ContentBlockDefinition
             {
                 Name = "Image with content block",
-                Id = new Guid("92B7A921-C1CF-4221-9723-563857DC7ADE"),
+                Id = new Guid("98BCA566-2525-4FC6-A382-5FD28C151CED"),
                 DataTypeKey = dataTypeKey,
                 // PreviewImage will usually be a path to some image,
                 // for this demo we use a base64-encoded PNG of 3x2 pixels
@@ -128,7 +128,7 @@ namespace PrezzoSite
                     {
                         new ContentBlockLayout
                         {
-                            Id = new Guid("F23711E3-F5E8-4C27-9B19-4D191E54DB5B"),
+                            Id = new Guid("417B6C60-3D1F-448E-9C8E-B48824578F15"),
                             Name = "Left to Right",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae interdum dolor, sit amet luctus odio.",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYzzDwPCfAQqYGJAAACokAc/b6i7NAAAAAElFTkSuQmCC",
@@ -136,20 +136,56 @@ namespace PrezzoSite
                         },
                         new ContentBlockLayout
                         {
-                            Id = new Guid("CC3FADCA-47F9-4D0B-84F0-4B954794A8FB"),
+                            Id = new Guid("4AA80ED5-BB0E-40EC-A129-C8669E686F80"),
                             Name = "Right to Left",
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae interdum dolor, sit amet luctus odio. Nam laoreet at odio eu faucibus. Vivamus non rhoncus erat, sit amet efficitur ipsum.",
                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYyy+JPafAQqYGJAAADcdAl5UlCmyAAAAAElFTkSuQmCC",
                             ViewPath = "~/Views/Partials/ImageWithContent/RightToLeft.cshtml"
                         },                        
                     },
+                    CategoryIds = new[]
+                 {
+                     Perplex.ContentBlocks.Constants.Categories.Content,
+                     specialCategoryId,
+                 }
 
-                CategoryIds = new[]
-                {
-                    Perplex.ContentBlocks.Constants.Categories.Content,
-                    specialCategoryId,
-                }
             };
+
+            // Hero Video
+            var heroVideo  = new ContentBlockDefinition
+             {
+                Name = "Video with content block",
+                Id = new Guid("92B7A921-C1CF-4221-9723-563857DC7ADE"),
+                DataTypeKey = dataTypeKey,
+                // PreviewImage will usually be a path to some image,
+                // for this demo we use a base64-encoded PNG of 3x2 pixels
+                PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYzzDwPCfAQqYGJAAACokAc/b6i7NAAAAAElFTkSuQmCC",
+                Description = "Video with content block",
+                Layouts = new IContentBlockLayout[]
+                     {
+                         new ContentBlockLayout
+                         {
+                             Id = new Guid("F23711E3-F5E8-4C27-9B19-4D191E54DB5B"),
+                             Name = "Left to Right",
+                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae interdum dolor, sit amet luctus odio.",
+                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYzzDwPCfAQqYGJAAACokAc/b6i7NAAAAAElFTkSuQmCC",
+                             ViewPath = "~/Views/Partials/ImageWithContent/LeftToRight.cshtml"
+                         },
+                         new ContentBlockLayout
+                         {
+                             Id = new Guid("CC3FADCA-47F9-4D0B-84F0-4B954794A8FB"),
+                             Name = "Right to Left",
+                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae interdum dolor, sit amet luctus odio. Nam laoreet at odio eu faucibus. Vivamus non rhoncus erat, sit amet efficitur ipsum.",
+                             PreviewImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAATSURBVAiZYyy+JPafAQqYGJAAADcdAl5UlCmyAAAAAElFTkSuQmCC",
+                             ViewPath = "~/Views/Partials/ImageWithContent/RightToLeft.cshtml"
+                         },                        
+                     },
+                CategoryIds = new[]
+                 {
+                     Perplex.ContentBlocks.Constants.Categories.Content,
+                     specialCategoryId,
+                 }
+             };
 
             // Header
             var header = new ContentBlockDefinition
@@ -222,6 +258,7 @@ namespace PrezzoSite
             };
 
             _definitions.Add(block);
+            _definitions.Add(heroVideo);
             _definitions.Add(heroImage);
             _definitions.Add(header);
 
@@ -279,6 +316,7 @@ namespace PrezzoSite
         private void CreatePrezzoBlock(string contentTypeAlias, Guid dataTypeKey)
         {
             CreatePrezzoBlockElementType(contentTypeAlias);
+            CreatePrezzoHeroVideoElementType(contentTypeAlias);
             CreatePrezzoBlockDataType(contentTypeAlias, dataTypeKey);
         }
 
@@ -314,8 +352,72 @@ namespace PrezzoSite
                         new PropertyType(_shortStringHelper, PropertyEditors.Aliases.MediaPicker, ValueStorageType.Ntext)
                         {
                             PropertyEditorAlias = PropertyEditors.Aliases.MediaPicker,
+                            Name = "Video",
+                            Alias = "video",
+                        },
+                        new PropertyType(_shortStringHelper, PropertyEditors.Aliases.MediaPicker, ValueStorageType.Ntext)
+                        {
+                            PropertyEditorAlias = PropertyEditors.Aliases.MediaPicker,
                             Name = "Image",
                             Alias = "image",
+                        },
+                        new PropertyType(_shortStringHelper, PropertyEditors.Aliases.TextBox, ValueStorageType.Ntext)
+                        {
+                            PropertyEditorAlias = PropertyEditors.Aliases.TextBox,
+                            Name = "ButtonText",
+                            Alias = "buttonText",
+                        },
+                        new PropertyType(_shortStringHelper, PropertyEditors.Aliases.ContentPicker, ValueStorageType.Ntext)
+                        {
+                            PropertyEditorAlias = PropertyEditors.Aliases.ContentPicker,
+                            Name = "ButtonLink",
+                            Alias = "buttonLink",
+                        },
+                    }))
+                    {
+                        Alias = "content",
+                        Name = "Content",
+                    }
+                })
+            };
+
+            _contentTypeService.Save(contentType);
+        }
+
+        private void CreatePrezzoHeroVideoElementType(string contentTypeAlias)
+        {
+            if (_contentTypeService.Get(contentTypeAlias) != null)
+            {
+                // Already created
+                return;
+            }
+
+            IContentType contentType = new ContentType(_shortStringHelper, -1)
+            {
+                Alias = contentTypeAlias,
+                IsElement = true,
+                Name = "Hero Video Block",
+                PropertyGroups = new PropertyGroupCollection(new[]
+                {
+                    new PropertyGroup(new PropertyTypeCollection(true, new[]
+                    {
+                        new PropertyType(_shortStringHelper, PropertyEditors.Aliases.TextBox, ValueStorageType.Ntext)
+                        {
+                            PropertyEditorAlias = PropertyEditors.Aliases.TextBox,
+                            Name = "Title",
+                            Alias = "title",
+                        },
+                        new PropertyType(_shortStringHelper, PropertyEditors.Aliases.TextBox, ValueStorageType.Ntext)
+                        {
+                            PropertyEditorAlias = PropertyEditors.Aliases.TinyMce,
+                            Name = "Text",
+                            Alias = "text",
+                        },
+                        new PropertyType(_shortStringHelper, PropertyEditors.Aliases.MediaPicker, ValueStorageType.Ntext)
+                        {
+                            PropertyEditorAlias = PropertyEditors.Aliases.MediaPicker,
+                            Name = "Video",
+                            Alias = "video",
                         },
                         new PropertyType(_shortStringHelper, PropertyEditors.Aliases.TextBox, ValueStorageType.Ntext)
                         {
