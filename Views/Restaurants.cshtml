@@ -1,28 +1,26 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Restaurants>
+﻿@{
+	Layout = "MasterPage.cshtml";
+}
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Restaurants>
 @inject IContentBlockRenderer Renderer
 
 @await Renderer.Render(Model.PerplexBlocks, Html.PartialAsync)
-<div>
-	Here is my search
-</div>
 
+<div class="container h-full mx-auto px-4 text-gray-900">
+	<div class="grid h-full grid-cols-1 gap-x-6 gap-y-10">
 
-
-
-
-
-@{
-	var selection = Umbraco.Content(Guid.Parse("506420f8-c631-42f0-8a35-76e20a0ea8bc"))
-    .ChildrenOfType("restaurant")
-    .Where(x => x.IsVisible())
-    .OrderBy(x => x.Name);
-}
-<ul>
+	@{
+		var selection = Umbraco.Content(Guid.Parse("506420f8-c631-42f0-8a35-76e20a0ea8bc"))
+		.ChildrenOfType("restaurant")
+		.Where(x => x.IsVisible())
+		.OrderBy(x => x.Name);
+	}
 	@foreach (var item in selection)
 	{
-		<li>
+		<div>
 			<a href="@item.Url()">@item.Name()</a>
-		</li>
+		</div>
 	}
-</ul>
 
+	</div>
+</div>

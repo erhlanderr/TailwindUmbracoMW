@@ -1,8 +1,6 @@
-@* @inherits UmbracoViewPage
-@using UmbNav.Core.Extensions
-@using UmbNav.Core.Models
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
-@using Umbraco.Cms.Web;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +11,9 @@
     <link rel="stylesheet" href="/css/styles.css"/>
 </head>
 
-    
-<body class="font-poppins">
-    @RenderBody()
-</body>
-</html> *@
+    <body class="font-poppins">
+        @await Html.PartialAsync("Header")
+        @RenderBody()
+        @await Html.PartialAsync("Footer")
+    </body>
+</html>

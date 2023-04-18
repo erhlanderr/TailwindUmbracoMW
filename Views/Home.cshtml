@@ -1,4 +1,7 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
+﻿@{
+	Layout = "MasterPage.cshtml";
+}
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
 @inject IContentBlockRenderer Renderer
 
 @await Renderer.Render(Model.PerplexBlocks, Html.PartialAsync)
@@ -47,5 +50,3 @@
 			}
 		</div>
 	</div>
-
-		<div class="pt-24"></div>
